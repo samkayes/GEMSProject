@@ -56,7 +56,7 @@ class CreateRequest extends Component{
                     <div className="card">
                         <div className="card-header">
                             <h4>Leave Request Form
-                                <Link to={'/'} className="btn btn-primary btn-sm float-end">Back</Link>
+                                <Link to={'/requests'} className="btn btn-primary btn-sm float-end">Back</Link>
                             </h4>
                         </div>
                         <div className="card-body"></div>

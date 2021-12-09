@@ -52,4 +52,14 @@ class RequestController extends Controller
             'message'=> 'Approve/disapprove successful',
         ]);
     }
+
+    public function delete(Request $request, $id)
+    {
+        LeaveRequest::where('request_id', $id)->delete();
+
+        return response()->json([
+            'status'=> 200,
+            'message'=> 'Removed request',
+        ]);
+    }
 }
