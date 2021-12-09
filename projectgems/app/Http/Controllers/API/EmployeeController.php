@@ -8,6 +8,16 @@ use App\Models\Employee;
 
 class EmployeeController extends Controller
 {
+    public function index()
+    {
+        $employees = Employee::all();
+
+        return response()->json([
+            'status'=> 200,
+            'employees' => $employees,
+        ]);
+    }
+
     public function store(Request $request)
     {
         // $validator = Validator::make($request->all(),[

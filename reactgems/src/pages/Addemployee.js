@@ -34,7 +34,7 @@ class Addemployee extends Component{
         const res = await axios.post('http://localhost:8000/api/add-employee', this.state);
         if(res.data.status === 200)
         {
-            //console.log(res.data.message);
+            console.log(res.data.message);
             swal({
                 title: "Success!",
                 text: res.data.message,
@@ -54,11 +54,11 @@ class Addemployee extends Component{
                 password:'',
             });
         }
-        //else{
-        //     this.setState({
-        //         error_list: res.data.validate_err,
-        //     });
-        // }
+        else{
+             this.setState({
+                 error_list: res.data.validate_err,
+             });
+         }
     }
 
     render(){

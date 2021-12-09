@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\EmployeeController;
+use App\Http\Controllers\API\RequestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,10 @@ use App\Http\Controllers\API\EmployeeController;
 |
 */
 Route::post('/add-employee', [EmployeeController::class,'store']);
+Route::post('/create-request', [RequestController::class,'store']);
+Route::get('employees', [EmployeeController::class,'index']);
+Route::get('requests', [RequestController::class,'index']);
+Route::post('/approve/{id}', [RequestController::class,'approve']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
