@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from './Header';
-import Schedules from './Schedules';
 
 function PageContent({title,page}) {
     return (

@@ -21,6 +21,7 @@ Route::get('employees', [EmployeeController::class,'index']);
 Route::get('requests', [RequestController::class,'index']);
 Route::post('/approve/{id}', [RequestController::class,'approve']);
 Route::post('/delete/{id}', [RequestController::class,'delete']);
+Route::get('dashboard', [EmployeeController::class,'dashboard']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
