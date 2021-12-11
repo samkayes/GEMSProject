@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from './components/Sidebar';
 import PageContent from './components/PageContent';
+import Schedules from './components/Schedules';
 const {Component} = require("react");
 
 class Dashboard extends Component{
@@ -11,7 +12,7 @@ class Dashboard extends Component{
                     <Sidebar />
                 </div>
                 <div className='page-content d-flex flex-column'>
-                    <PageContent />
+                    <PageContent title="DASHBOARD" page={<Schedules />}/>
                 </div>
             </div>
         )

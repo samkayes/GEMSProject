@@ -2,11 +2,11 @@ import React from 'react'
 import Header from './Header';
 import Schedules from './Schedules';
 
-function PageContent() {
+function PageContent({title,page}) {
     return (
         <>
-            <Header title="DASHBOARD" />
-            <Schedules />
+            <Header title={title} />
+            {page}
         </>
     )
 }
