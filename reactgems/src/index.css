@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Barlow;
+  src: url('https://fonts.googleapis.com/css2?family=Barlow:wght@800&family=Montserrat:wght@500&display=swap');
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -20,3 +25,48 @@ form {
 .card {
   margin-bottom: 2%;
 }
+
+.page-format{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.sidebar{
+    width: 15vw;
+}
+
+.sidebar nav ul li:hover{
+    background-color: khaki;
+}
+
+.logo-img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+.page-content{
+    width: 85vw;
+}
+
+.header{
+    height: 15%;
+    width: 100%;
+    border-bottom: 1px solid rgb(214, 214, 214);
+    font-family: 'Barlow', sans-serif;
+    color: rgb(27, 27, 27);
+    letter-spacing: 5px;
+}
+
+.user-icon{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
+
+.on-off-count .count{
+    height: 10px;
+    width: 10px;
+}
+
