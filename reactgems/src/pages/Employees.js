@@ -12,14 +12,14 @@ class Employees extends Component{
                     <div className="card">
                         <div className="card-header">
                             <h4>Employees Data
-                                <Link to={'add-employee'} className="btn btn-primary btn-sm float-end">Add Employees</Link>
+                                <Link to='/add-employee' className="btn btn-primary btn-sm float-end">Add Employees</Link>
                             </h4>
                         </div>
                         <div className="card-body"></div>
                     </div>
                     
                     <br></br>
-                    <p><Link to={'requests'} className="btn btn-primary">[DEV] View Requests</Link></p>
+                    <p><Link to='/requests' className="btn btn-primary">[DEV] View Requests</Link></p>
                 </div>
             </div>
         </div>
