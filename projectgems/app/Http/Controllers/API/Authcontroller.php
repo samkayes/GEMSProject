@@ -38,13 +38,13 @@ class AuthController extends Controller
       ]);
       }else{
       $user = Employee::where('username', $request->username)->first();
-      if(! $user ){ //! $user || ! Hash::check($request->password, $user->password)
+      if(! $user && ! Hash::check($request->password, $user->password) ){ //! $user || ! Hash::check($request->password, $user->password)
          return response()->json([
          'status' => 401,
          'message' => 'Invalid Credentials',
          ]);
       }else{
-         // $token = $user->_construct($request.'_Token')->plainTextToken;
+         //$token = $user->createToken($request.'_Token')->plainTextToken;
          $token = uniqid(base64_encode(Str::random(40)));
          return response()->json([
             'status' =>200,
