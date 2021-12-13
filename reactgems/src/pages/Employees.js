@@ -8,6 +8,7 @@ class Employees extends Component{
         return(
             <div className="container">
             <div className="row">
+            <Link to='/' className="btn btn-primary btn-sm" style={{width:'100px'}}>Log Out</Link>
                 <div className="col-md-12">
                     <div className="card">
                         <div className="card-header">

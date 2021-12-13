@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<Login/>}/>
+        <Route path="/" element={<Login/>}/>
         <Route path="/employee" element={<Employee/>}/>
         <Route path="/add-employee" element={<Addemployee/>}/>
         <Route path="/requests/create-request" element={<CreateRequest/>}/>

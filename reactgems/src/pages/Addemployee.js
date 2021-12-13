@@ -42,7 +42,9 @@ class Addemployee extends Component{
                 text: res.data.message,
                 icon: "success",
                 button: "Done!",
-              });
+              }).then(function(){
+                window.location="http://localhost:3000/employee";
+            });
             this.setState({
                 fname: '',
                 mname: '',

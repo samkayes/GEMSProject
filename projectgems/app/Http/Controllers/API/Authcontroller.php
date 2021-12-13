@@ -28,13 +28,13 @@ class AuthController extends Controller
    public function login(Request $request){ 
       
       $validator = Validator::make($request->all(),[
-      'username' => 'required',
+      'username' => 'required|max:191',
       'password' => 'required',
       ]);
 
       if($validator->fails()){
       return response()->json([
-         'validation_errors' => $validator->messages(),
+         'validate_err' => $validator->messages(),
       ]);
       }else{
       $user = Employee::where('username', $request->username)->first();

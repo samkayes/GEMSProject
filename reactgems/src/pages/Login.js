@@ -9,6 +9,7 @@ class Login extends Component{
    state = {
        username: '',
        password: '',
+       error_list:[],
    }
 
    handleInput = (e) => {
@@ -22,10 +23,10 @@ class Login extends Component{
     
        e.preventDefault();
        
-    //    const data = {
-    //        username: this.username,
-    //        password: this.password,
-    //    }
+       const data = {
+           username: this.username,
+           password: this.password,
+       }
     //    axios.get('sanctum/csrf-cookie').then(response => {
     //    axios.post('api/login',data).then(res =>{
     //         if(res.data.status === 200)
@@ -51,12 +52,17 @@ class Login extends Component{
                 text: res.data.message,
                 icon: "success",
                 button: "Done!",
+            }).then(function(){
+                window.location="http://localhost:3000/employee";
             });
             this.setState({
                 username: '',
                 password: '',
             });
-           
+        }else{
+            this.setState({
+                error_list: res.data.validate_err,
+            })
         }
 
         
@@ -78,18 +84,20 @@ class Login extends Component{
                                 <div className="form-group mb-3">
                                     <label>Username</label>
                                     <input type="text" name="username" onChange={this.handleInput} value={this.state.username} className="form-control" />
+                                    <span className="text-danger">{this.state.error_list.username}</span>
                                 </div>
                                 
                                 <div className="form-group mb-3">
                                     <label>Password</label>
                                     <input type="password" name="password" onChange={this.handleInput} value={this.state.password} className="form-control" />
+                                    <span className="text-danger">{this.state.error_list.password}</span>
                                 </div>
                                 
                                 <div className="form-group mb-3">
                                     <button type="submit" className="btn btn-primary">Log In</button>
                                 </div>
                             </form>
-                            <Link to={'/requests'} className="btn btn-primary btn-sm float-end">Proceed</Link>
+                            <Link to={'/employees'} className="btn btn-primary btn-sm float-end">Proceed</Link>
                     </div>
                 
                 </div>
