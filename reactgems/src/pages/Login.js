@@ -97,7 +97,6 @@ class Login extends Component{
                                     <button type="submit" className="btn btn-primary">Log In</button>
                                 </div>
                             </form>
-                            <Link to={'/employees'} className="btn btn-primary btn-sm float-end">Proceed</Link>
                     </div>
                 
                 </div>
