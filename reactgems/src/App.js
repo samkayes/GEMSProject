@@ -10,6 +10,7 @@ import Employee from './pages/Employees';
 import Addemployee from './pages/Addemployee';
 import CreateRequest from './pages/CreateRequest';
 import Requests from './pages/Requests';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <Route path="/add-employee" element={<Addemployee/>}/>
         <Route path="/requests/create-request" element={<CreateRequest/>}/>
         <Route path="/requests" element={<Requests/>}/>
-
+        <Route path="/dashboard" element={<Dashboard />}/>
       </Routes>
     </Router>
   );

@@ -1,11 +1,8 @@
+import React, { Component } from 'react'
+import {Link} from 'react-router-dom';
 import axios from 'axios';
-import React from 'react';
-import RequestList from './components/RequestList';
-import Sidebar from './components/Sidebar';
-import PageContent from './components/PageContent';
-const {Component} = require("react");
 
-class Requests extends Component{
+class RequestList extends Component{
 
     state = {
         requests: [],
@@ -61,7 +58,12 @@ class Requests extends Component{
     render(){
         var request_LIST = "";
         if(this.state.loading){
-            request_LIST = "LOADING";
+            request_LIST = 
+            <li className="list-group-item py-3 px-5 d-flex align-items-center justify-content-between">
+                <div className='d-flex align-items-center w-25'>
+                    <p className='m-0 h5'>Loading . . .</p>
+                </div>
+            </li>
         } else {
             request_LIST =
             this.state.requests.map( (item) => {
@@ -70,38 +72,46 @@ class Requests extends Component{
                 var button = "";
                 if (item.approved===1){
                     button = "APPROVED";
-                    bClass = "btn btn-success";
+                    bClass = "btn btn-success btn-sm";
                 } else {
                     button = "NOT APPROVED";
-                    bClass = "btn btn-danger";
+                    bClass = "btn btn-danger btn-sm";
                 }
                 return (
-                    <div className="card" key={item.request_id}>
-                        <div className="card-header">
+                    <div key={item.request_id} className="list-group-item py-3 px-5 align-items-center justify-content-between">
+                        <div>
                             {emp.last_name}, {emp.first_name}
-                            <button data-toggle="modal" data-target="#deleteModal" className = "btn btn-danger btn-sm float-end" onClick={this.delete.bind(this, item.request_id)}>Delete</button>
+                            <div className = "float-end">
+                                <button className = "btn btn-danger btn-sm me-2" onClick={this.delete.bind(this, item.request_id)}><b>DELETE</b></button>
+                                <button onClick={this.approve.bind(this, item.request_id)} className = {bClass}><b>{button}</b></button>
+                            </div>
                         </div>
-                        <div className="card-body">
-                            <p><b>Duration:</b> {item.duration} day/s</p>
-                            <p><b>Reason:</b> {item.reason}</p>
+                        <div>
+                            <p><b>Leave Date:</b> {item.leavedate}<br></br>
+                            <b>Duration:</b> {item.duration} day/s<br></br>
+                            <b>Reason:</b> {item.reason}</p>
                         </div>
-                        <button onClick={this.approve.bind(this, item.request_id)} className = {bClass}><b>{button}</b></button>
                     </div>
                 )
             })
         }
 
         return(
-            <div className="page-format">
-                <div className='sidebar shadow'>
-                    <Sidebar />
-                </div>
-                <div className='page-content d-flex flex-column'>
-                    <PageContent title="REQUESTS" page={<RequestList />}/>
+            <div className='schedules h-auto d-flex p-5'>
+                <div className='schedules-content w-75 p-2'>
+                    <div className="card shadow">
+                        <div className='p-4 d-flex justify-content-between'>
+                            <p className='h3 m-0'>Employee Requests</p>
+                            <Link to={'create-request'} className="btn btn-primary btn-sm float-end">Create Request</Link>
+                        </div>
+                        <ul className="list-group list-group-flush">
+                            {request_LIST}
+                        </ul>
+                    </div>
                 </div>
             </div>
         )
-    };
+    }
 }
 
-export default Requests;
+export default RequestList

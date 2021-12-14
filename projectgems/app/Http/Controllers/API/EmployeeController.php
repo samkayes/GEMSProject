@@ -67,6 +67,13 @@ class EmployeeController extends Controller
         }
     }
 
-    
-    
+    public function dashboard()
+    {
+        $schedules = Employee::all();
+
+        return response()->json([
+            'status'=> 200,
+            'employees' => $schedules,
+        ]);
+    }
 }

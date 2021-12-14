@@ -1,10 +1,10 @@
 import React from 'react';
 import Sidebar from './components/Sidebar';
 import PageContent from './components/PageContent';
-import RequestForm from './components/RequestForm';
+import Schedules from './components/Schedules';
 const {Component} = require("react");
 
-class CreateRequest extends Component{
+class Dashboard extends Component{
     render(){
         return(
             <div className='page-format'>
@@ -12,12 +12,12 @@ class CreateRequest extends Component{
                     <Sidebar />
                 </div>
                 <div className='page-content d-flex flex-column'>
-                    <PageContent title="REQUEST FORM" page={<RequestForm />}/>
+                    <PageContent title="DASHBOARD" page={<Schedules />}/>
                 </div>
             </div>
         )
     };
 }
 
-export default CreateRequest;
+export default Dashboard;
  
