@@ -78,7 +78,7 @@ class RequestForm extends Component{
                                 </div>
                                 {/* <span className="text-danger">{this.state.error_list.password}</span> */}
                                 <div className="form-group mb-3">
-                                    <button type="submit" className="btn btn-primary">Send Request</button>
+                                    <button type="submit" className="btn btn-primary float-end" style={{margin:'10px'}}>Send Request</button>
                                 </div>
                             </form>
                     </div>

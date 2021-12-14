@@ -13,7 +13,7 @@ function Sidebar() {
                     <Link to={'/employee'} className="my-2 border-0 btn btn-primary btn-sm float-end text-dark bg-light py-3">Employees</Link>
                     <Link to={'/requests'} className="my-2 border-0 btn btn-primary btn-sm float-end text-dark bg-light py-3">Requests</Link>
                 </ul>
-                <button type='button' className='mx-auto w-50 btn btn-danger mt-auto p-2'>Logout</button>
+                <Link to='/' className="mx-auto w-50 btn btn-danger mt-auto p-2" style={{width:'100px'}}>Logout</Link>
             </nav>
         </>
     )

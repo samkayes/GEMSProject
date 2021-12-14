@@ -17,7 +17,13 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.bg{
+  background-color: #282c34;
+  margin-top: 200px;
+  padding:5%;
+  color: white;
+  justify-content: center;
+}
 .App-link {
   color: #61dafb;
 }

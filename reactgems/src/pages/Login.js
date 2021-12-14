@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 import { useNavigate, Link } from 'react-router-dom';
+import logo from '../logo.svg';
 const { Component } = require("react");
 
 class Login extends Component{
@@ -48,8 +49,8 @@ class Login extends Component{
         {
             console.log(res.data.message);
             swal({
-                title: "Success!",
-                text: res.data.message,
+                title: "Logged In Succesfully",
+                text: 'Welcome to GEMS',
                 icon: "success",
                 button: "Done!",
             }).then(function(){
@@ -70,38 +71,36 @@ class Login extends Component{
    
     render(){
         return(
-            <div className="container">
-            <div className="row">
-                <div className="col-md-6">
-                    <div className="card">
-                        <div className="card-header">
-                            <h4>Login
-                            </h4>
-                        </div>
-                        <div className="card-body"></div>
-                            <form onSubmit={this.loginSubmit}>
-                                
-                                <div className="form-group mb-3">
-                                    <label>Username</label>
-                                    <input type="text" name="username" onChange={this.handleInput} value={this.state.username} className="form-control" />
-                                    <span className="text-danger">{this.state.error_list.username}</span>
-                                </div>
-                                
-                                <div className="form-group mb-3">
-                                    <label>Password</label>
-                                    <input type="password" name="password" onChange={this.handleInput} value={this.state.password} className="form-control" />
-                                    <span className="text-danger">{this.state.error_list.password}</span>
-                                </div>
-                                
-                                <div className="form-group mb-3">
-                                    <button type="submit" className="btn btn-primary">Log In</button>
-                                </div>
-                            </form>
+            <div className="container">         
+               <div class="bg row shadow">
+                    <div className="col justify-center" style={{textAlign:'center'}}>
+                    <img src={logo} className="App-logo" alt="logo" />
+                        <h1>G E M S</h1>
                     </div>
-                
+                    <div className="col">
+                     <div>
+                     <h2>Sign In</h2>
+                     </div>
+                    <form onSubmit={this.loginSubmit}>                               
+                        <div className="form-group mb-3">
+                            <label>Username</label>
+                            <input type="text" name="username" onChange={this.handleInput} value={this.state.username} className="form-control" />
+                            <span className="text-danger">{this.state.error_list.username}</span>
+                        </div>
+                        
+                        <div className="form-group mb-3">
+                            <label>Password</label>
+                            <input type="password" name="password" onChange={this.handleInput} value={this.state.password} className="form-control" />
+                            <span className="text-danger">{this.state.error_list.password}</span>
+                        </div>
+                        
+                        <div className="form-group mb-3">
+                            <button type="submit" className="btn btn-primary">Sign In</button>
+                        </div>
+                    </form>
+                    </div>
                 </div>
             </div>
-        </div>
         )
     };
 }
