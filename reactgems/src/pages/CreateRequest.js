@@ -4,7 +4,7 @@ import PageContent from './components/PageContent';
 import RequestForm from './components/RequestForm';
 const {Component} = require("react");
 
-class Dashboard extends Component{
+class CreateRequest extends Component{
     render(){
         return(
             <div className='page-format'>
@@ -19,5 +19,5 @@ class Dashboard extends Component{
     };
 }
 
-export default Dashboard;
+export default CreateRequest;
  
