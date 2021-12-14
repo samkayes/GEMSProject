@@ -53,7 +53,7 @@ class Login extends Component{
                 icon: "success",
                 button: "Done!",
             }).then(function(){
-                window.location="http://localhost:3000/employee";
+                window.location="http://localhost:3000/home";
             });
             this.setState({
                 username: '',

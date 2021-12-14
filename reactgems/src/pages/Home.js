@@ -16,10 +16,10 @@ class Home extends Component{
                         <Clock></Clock>
                         <br/><br/>
                         <div className="col-md-6">                        
-                            <Link to={'check'} className="btn btn-primary btn-lg" style={{"height" : "5rem", "width" : "90%","font-size":"35px"}}>Check-in</Link>
+                            <Link to={'/check'} className="btn btn-primary btn-lg" style={{"height" : "5rem", "width" : "90%","font-size":"35px"}}>Check-in</Link>
                         </div>
                         <div className='col-md-6'>
-                            <Link to={'employees'} className="btn btn-secondary btn-lg" style={{"height" : "100%", "width" : "90%","font-size":"35px"}}>Login</Link>
+                            <Link to={'/dashboard'} className="btn btn-secondary btn-lg" style={{"height" : "100%", "width" : "90%","font-size":"35px"}}>Login</Link>
                         </div>
                     </div>
                 </div>
