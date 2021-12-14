@@ -105,7 +105,8 @@ class Requests extends Component{
                     </div>
 
                     <br></br>
-                    <Link to={'/employees'} className="btn btn-primary">Back to Home</Link>
+                    <Link to={'/employee'} className="btn btn-primary">Back to Home</Link>
+
                 </div>     
             </div>
         </div>

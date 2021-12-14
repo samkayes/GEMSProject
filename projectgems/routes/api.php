@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\EmployeeController;
 use App\Http\Controllers\API\RequestController;
-
+use App\Http\Controllers\API\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,6 +21,8 @@ Route::get('employees', [EmployeeController::class,'index']);
 Route::get('requests', [RequestController::class,'index']);
 Route::post('/approve/{id}', [RequestController::class,'approve']);
 Route::post('/delete/{id}', [RequestController::class,'delete']);
+
+Route::post('login', [AuthController::class, 'login'])->name('login');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
