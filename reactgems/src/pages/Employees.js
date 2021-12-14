@@ -16,7 +16,9 @@ class Employees extends Component{
                                 <Link to='/add-employee' className="btn btn-primary btn-sm float-end">Add Employees</Link>
                             </h4>
                         </div>
-                        <div className="card-body"></div>
+                        <div className="card-body">
+                            
+                        </div>
                     </div>
                     
                     <br></br>

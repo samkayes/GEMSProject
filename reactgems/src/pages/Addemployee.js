@@ -74,6 +74,7 @@ class Addemployee extends Component{
                         <div className="card-header">
                             <h4>Add Employee
                                 <Link to={'/employee'} className="btn btn-primary btn-sm float-end">Back</Link>
+
                             </h4>
                         </div>
                         <div className="card-body"></div>
