@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
+import TimeSchedules from './TimeSchedules';
 import axios from 'axios';
 
 class EmployeeList extends Component{
@@ -15,6 +16,7 @@ class EmployeeList extends Component{
                             <Link to='/add-employee' className="btn btn-primary float-end">Add Employee</Link>
                         </div>
                         <ul className="list-group list-group-flush">
+                        <TimeSchedules />
                         </ul>
                     </div>
                 </div>
